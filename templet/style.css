@@ -1,0 +1,8 @@
+.banner-image{
+    background-image: url("../images/Blog.jpg");
+    background-size: cover;
+  
+}
+h2{
+    color: rgb(212, 211, 211);
+}

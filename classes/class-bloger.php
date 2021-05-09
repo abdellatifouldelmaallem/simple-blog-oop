@@ -7,19 +7,19 @@ class bloger extends data {
     public function getArticle(){
 
         $sql = $this->conn->prepare("SELECT * FROM article");
-        if($sql->execute()){
-            return $sql->fetchAll();
+        $sql->execute();
+        if($sql->rowCount()>0){
+            return $sql->fetchAll(PDO::FETCH_OBJ);
         }else{
             false;
         }
-
     }
 
     // methode to delete article
     public function deleteArticle($id){
 
         $sql = $this->conn->prepare("DELETE FROM article WHERE id=:id");
-        $sql->bindParam(":id",$id);
+        $sql->bindParam(":id",$id,PDO::PARAM_INT);
         if($sql->execute()){
             return true;
         }else{
@@ -45,7 +45,7 @@ class bloger extends data {
     }
 
     //methode to update an article
-    public function updateArticle($title, $data, $content,$image){
+    public function updateArticle($id,$title, $date, $content,$image){
 
         $sql = $this->conn->prepare("UPDATE article SET title=:title, date=:date, content=:content, image=:image WHERE id=:id ");
         $sql->bindParam(":id",$id);
