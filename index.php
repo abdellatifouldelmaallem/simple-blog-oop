@@ -1,3 +1,5 @@
+<?php include './classes/class-db-con.php' ?>
+
 <?php include './templet/header.php' ?>
 <!------------------------------section navbar------------------------->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
@@ -16,7 +18,7 @@
                     <a href="#" class="nav-link text-white fs-4 ">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link text-white fs-4">Login</a>
+                    <a href="./login.php" class="nav-link text-white fs-4">Login</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link text-white fs-4">Contact us</a>
@@ -40,46 +42,54 @@
 </div>
 <!------------------cards------------->
 <div class="container mt-4">
-    <div class="row justify-content-center">
+    <div class="row">
+        <div class="row align-self-start">
 
-        <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-                <div class="image"><img src="./images/health2.jpg" class="card-img-top" alt="..."></div>
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./images/health2.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the
+                            card's content.
+                        </p>
+                        <a href="#!" class="btn btn-primary">Button</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-                <img src="./images/health3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./images/health2.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the
+                            card's content.
+                        </p>
+                        <a href="#!" class="btn btn-primary">Button</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-4">
-            <div class="card" style="width: 20rem;">
-                <img src="./images/design.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./images/health2.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and make up the bulk of the
+                            card's content.
+                        </p>
+                        <a href="#!" class="btn btn-primary">Button</a>
+                    </div>
                 </div>
             </div>
+
+          
+
         </div>
-
-    
-
-      
-
-     
     </div>
 </div>
 

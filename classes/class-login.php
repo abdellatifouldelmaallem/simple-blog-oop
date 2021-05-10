@@ -1,6 +1,6 @@
 <?php
 
-class login extends data {
+class Auth extends data {
 
    
 
@@ -15,7 +15,7 @@ class login extends data {
 
         if($sql->rowCount() == 1){
                   
-            header("location:page.table.php");
+            header("location:page-table.php");
         }else{
               echo "<center><h1>your email or password not correct...</h1></center>";
         }

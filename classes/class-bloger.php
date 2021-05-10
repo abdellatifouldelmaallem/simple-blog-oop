@@ -1,5 +1,5 @@
 <?php 
-
+include 'class-db-con.php';
 class bloger extends data {
 
 
@@ -7,11 +7,10 @@ class bloger extends data {
     public function getArticle(){
 
         $sql = $this->conn->prepare("SELECT * FROM article");
-        $sql->execute();
-        if($sql->rowCount()>0){
+        if($sql->execute()){
             return $sql->fetchAll(PDO::FETCH_OBJ);
         }else{
-            false;
+            return false;
         }
     }
 
@@ -20,26 +19,26 @@ class bloger extends data {
 
         $sql = $this->conn->prepare("DELETE FROM article WHERE id=:id");
         $sql->bindParam(":id",$id,PDO::PARAM_INT);
-        if($sql->execute()){
-            return true;
-        }else{
-            return false;
-        }
-
+        return $sql->execute();
     }
 
     // methode to add article
     public function addArticle($title, $date, $content,$image){
-        $sql = $this->conn->prepare("INSERT INTO article (title,date,content,image) VALUES (:title,:date,:content,:image)");
-        $sql->bindParam(':title',$title);
-        $sql->bindParam(':data',$date);
-        $sql->bindParam(':content',$content);
-        $sql->bindParam(':image',$image);
+        try {
+            $sql = $this->conn->prepare("INSERT INTO article (title,date,content,image) VALUES (:title,:date,:content,:image)");
+            $sql->bindParam(':title',$title,PDO::PARAM_STR);
+            $sql->bindParam(':date',$date,PDO::PARAM_STR);
+            $sql->bindParam(':content',$content,PDO::PARAM_STR);
+            $sql->bindParam(':image',$image,PDO::PARAM_STR);
 
-        if($sql->execute()){
-            return $this->conn->lastInsertId();
-        }else{
-            return false;
+            if($sql->execute()){
+                echo "yes";
+                // return $this->conn->lastInsertId();
+            }else{
+                return false;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
         }
 
     }

@@ -1,9 +1,9 @@
-<?php include './classes/class-db-con.php'?>
-<?php include './classes/class-bloger.php';
+<?php 
+include './classes/class-bloger.php';
 
 $art = new bloger();
-$row=$art->getArticle();
-
+$row = $art->getArticle();
+print_r($row);
 
  ?>                 
 <?php include './templet/header.php' ?>
@@ -32,8 +32,7 @@ $row=$art->getArticle();
                   </tr>
               </thead>   
               <tbody>
-              <?php foreach($row as $data)   ?>
-
+              <?php foreach($row as $key=>$data){   ?>
                 <tr >
                     <td><?php echo $data->id; ?></td>
                     <td><?php echo $data->title; ?></td>
@@ -41,11 +40,10 @@ $row=$art->getArticle();
                     <td><?php echo $data->content; ?></td>
                     <td><img src="<?php echo $data->image; ?>" alt=""></td>                                                     
                     <td>
-                    <a href="./edit.php?=<?=$data->id;?>" class="btn btn-primary">Edit</a>
-                    <a href="./delete.php?=<?= $data->id; ?>" class="btn btn-danger delete-user" >Delete</a></td>                                                     
-                </tr>
-             
-                
+                    <a href="./edit.php?id=<?=$data->id;?>" class="btn btn-primary">Edit</a>
+                    <a href="./delete.php?id=<?= $data->id; ?>" class="btn btn-danger delete-user" >Delete</a></td>                                                     
+                </tr>  
+              <?php } ?>
                                                 
               </tbody>
             </table>

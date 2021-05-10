@@ -1,7 +1,7 @@
 <?php include './classes/class-db-con.php'?>
 <?php include './classes/class-login.php';
 
-$obj = new data();
+// $obj = new data();
     
     session_start();
    if(isset($_POST['submit'])){
@@ -9,7 +9,7 @@ $obj = new data();
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $test = new login();
+    $test = new Auth();
     $test->login($email, $password);
     $_SESSION["email"] = $_POST["email"];
     $_SESSION["password"] = $_POST["password"];
