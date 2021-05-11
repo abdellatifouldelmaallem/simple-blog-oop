@@ -9,11 +9,21 @@ if(isset($_POST['submit'])){
     $title = $_POST['title'];
     $date = $_POST['date'];
     $content = $_POST['content'];
-    $image = $_POST['image'];
 
-    if(!empty($title) && !empty($date) && !empty($content) && !empty($image)){
+    $image = $_FILES['image']['name'];
+    $tmp_dir = $_FILES['image']['tmp_name'];
+    $imageSize = $_FILES['image']['size'];
+    
+    $upload_dir = './upload-images/';
+    $imgExt = strtolower(pathinfo($image,PATHINFO_EXTENSION));
+    $valid_extansion = array('jpeg','jpg','png');
+    $picImage = rand(1000,1000000).".".$imgExt;
+    move_uploaded_file($tmp_dir,$upload_dir.$picImage);
+
+
+    if(!empty($title) && !empty($date) && !empty($content) && !empty($picImage)){
         $object = new bloger();
-        if($object->addArticle($title, $date, $content, $image)){
+        if($object->addArticle($title, $date, $content, $picImage)){
           header("location:page-table.php");  
         }
     }
@@ -38,7 +48,7 @@ else{
 
 <a href="./page-table.php" class="btn btn-primary mb-1">Back</a></div>
 <hr>
-<form action="Add-an-article.php" method="POST" >
+<form action="Add-an-article.php" method="POST" enctype="multipart/form-data" >
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">title :</label>
     <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -56,7 +66,7 @@ else{
 
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">image :</label>
-    <input type="text" class="form-control" name="image" id="exampleInputPassword1">
+    <input type="file" class="form-control" name="image" id="exampleInputPassword1">
   </div>
 
   <div class="col-sm-4">
