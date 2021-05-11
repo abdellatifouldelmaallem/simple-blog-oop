@@ -53,12 +53,23 @@ class bloger extends data {
         $sql->bindParam(":content",$content);
         $sql->bindParam(":image",$image);
 
-        if($sql->execute()){
+        if($sql->execute(array(":title"=>$title,":date"=>$date,":content"=>$content,":image"=>$image))){
             return true;
         }else{
             return false;
         }
         
+    }
+
+    // methode to getSingleArticle
+    public function getSingleArticle($id){
+        $sql = $this->conn->prepare("SELECT * FROM article WHERE id=:id");
+        $sql->bindParam(":id",$id);
+        if($sql->execute()){
+            return $sql->fetch(PDO::FETCH_OBJ);
+        }else{
+            return false;
+        }
     }
 
 
