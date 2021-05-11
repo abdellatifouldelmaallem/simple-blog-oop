@@ -25,17 +25,18 @@ if(isset($_GET['id'])){
       move_uploaded_file($tmp_dir,$upload_dir.$picImage);
   
       $object = new bloger();
-      if($object->addArticle($id,$title, $date, $content,$picImage)){
+      if($object->updateArticle($id,$title, $date, $content,$picImage)){
           header("location:page-table.php");
       }else{
          echo "you have error"; 
       }
-    }else{
+    }
+    
       $title = $articleOld->title;
       $date = $articleOld->date;
       $content = $articleOld->content;
       $image = $articleOld->image;
-    }
+    
   }
 }
 
@@ -57,7 +58,7 @@ if(isset($_GET['id'])){
 
 <a href="./page-table.php" class="btn btn-primary mb-1">Back</a></div>
 <hr>
-<form action="./edit.php" method="POST" enctype="multipart/form-data" >
+<form action="./edit.php?id=<?=$id;?>" method="POST" enctype="multipart/form-data" >
   <div class="mb-3">
 
   <input type="hidden" name="id" value="<?php echo $id ?>">

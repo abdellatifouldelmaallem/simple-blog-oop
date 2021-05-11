@@ -53,7 +53,7 @@ class bloger extends data {
         $sql->bindParam(":content",$content);
         $sql->bindParam(":image",$image);
 
-        if($sql->execute(array(":title"=>$title,":date"=>$date,":content"=>$content,":image"=>$image))){
+        if($sql->execute()){
             return true;
         }else{
             return false;
