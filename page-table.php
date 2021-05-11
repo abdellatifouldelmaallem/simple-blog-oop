@@ -3,7 +3,7 @@ include './classes/class-bloger.php';
 
 $art = new bloger();
 $row = $art->getArticle();
-print_r($row);
+
 
  ?>                 
 <?php include './templet/header.php' ?>

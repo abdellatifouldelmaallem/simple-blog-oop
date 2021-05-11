@@ -32,8 +32,8 @@ class bloger extends data {
             $sql->bindParam(':image',$image,PDO::PARAM_STR);
 
             if($sql->execute()){
-                echo "yes";
-                // return $this->conn->lastInsertId();
+                
+                return $this->conn->lastInsertId();
             }else{
                 return false;
             }
