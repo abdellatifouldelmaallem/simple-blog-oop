@@ -135,5 +135,8 @@
     </div>
 </div>
 
+<!------------------foooter------------->
+
+
 
 <?php include './templet/footer.php' ?>

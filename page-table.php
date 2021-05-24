@@ -32,7 +32,7 @@ $row = $art->getArticle();
                   </tr>
               </thead>   
               <tbody>
-              <?php foreach($row as $key=>$data){   ?>
+              <?php foreach($row as $data){   ?>
                 <tr >
                     <td><?php echo $data->id; ?></td>
                     <td><?php echo $data->title; ?></td>
