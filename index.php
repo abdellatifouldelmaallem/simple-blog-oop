@@ -136,6 +136,30 @@
 </div>
 
 <!------------------foooter------------->
+<div class="footer">
+
+<div class="list">
+    <small>Home</small>
+    <small>TRIPS</small>
+    <small>EPICS</small>
+    <small>BLOG</small>
+</div>
+
+<div class="list">
+    <small>FIND AN ADVENTURE</small>
+    <small>SUILD CUSTOM TRIP</small>
+    <small>MY LIST</small>
+    <small>LOGIN</small>  
+</div>
+
+<div class="list">
+    <small>CONTACT US</small>  
+    <small>Facebook</small>
+    <small>Instagram</small>
+    <small>Twitter</small>
+</div>
+
+</div>
 
 
 
