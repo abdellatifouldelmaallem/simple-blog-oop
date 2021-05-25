@@ -73,7 +73,7 @@
                                 <input type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group mt-1">     
-                                <input type="submit" name="submit" class="btn btn-dark btn-md" value="submit">
+                                <input type="submit" name="submit" class="btn btn-dark btn-md mt-3" value="submit">
                             </div>
                             
                         </form>
