@@ -1,7 +1,7 @@
 <?php include './classes/class-db-con.php'?>
 <?php include './classes/class-login.php';
 
-// $obj = new data();
+
     
     session_start();
    if(isset($_POST['submit'])){

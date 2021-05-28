@@ -3,12 +3,12 @@ include 'class-db-con.php';
 class bloger extends data {
 
 
-  // methode to get article
+  // methode to get articles
     public function getArticle(){
 
         $sql = $this->conn->prepare("SELECT * FROM article");
         if($sql->execute()){
-            return $sql->fetchAll(PDO::FETCH_OBJ);
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
         }else{
             return false;
         }
@@ -54,7 +54,7 @@ class bloger extends data {
         $sql->bindParam(":image",$image);
 
         if($sql->execute()){
-            return true;
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
         }else{
             return false;
         }

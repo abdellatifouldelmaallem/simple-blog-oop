@@ -20,16 +20,13 @@ class Auth extends data {
               echo "<center><h1>your email or password not correct...</h1></center>";
         }
 
-
      }else{
 
       echo "<center><h1>empty...!you must fill the inputs  !</h1></center>";
      }
-
     }
 
 }
-
 
 
 ?>

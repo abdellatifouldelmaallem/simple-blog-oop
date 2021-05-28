@@ -21,5 +21,5 @@ CREATE TABLE `article`(
     `title` varchar (100) not null,
     `date` varchar (100) not null,
     `content` varchar (100) not null,
-    `photo` varchar (100) not null
+    `image` text  not null
 )

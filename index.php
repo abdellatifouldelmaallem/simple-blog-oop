@@ -1,6 +1,17 @@
-<?php include './classes/class-db-con.php' ?>
+<?php include './classes/class-bloger.php' ?>
+
+<?php 
+
+$card = new bloger();
+
+$cards = $card -> getArticle();
+
+  ?>
 
 <?php include './templet/header.php' ?>
+
+
+
 <!------------------------------section navbar------------------------->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
 
@@ -58,7 +69,7 @@
                     </div>
                 </div>
             </div>
-
+<!-- 
             <div class="col-md-4">
                 <div class="card">
                     <img src="./images/design.jpg" class="card-img-top" alt="..." />
@@ -127,7 +138,7 @@
                         <a href="#!" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
           
 

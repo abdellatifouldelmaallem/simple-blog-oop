@@ -34,14 +34,14 @@ $row = $art->getArticle();
               <tbody>
               <?php foreach($row as $data){   ?>
                 <tr >
-                    <td><?php echo $data->id; ?></td>
-                    <td><?php echo $data->title; ?></td>
-                    <td><?php echo $data->date; ?></td>
-                    <td><?php echo $data->content; ?></td>
-                    <td><?php echo $data->image; ?></td>                                                     
+                    <td><?php echo $data['id'] ?></td>
+                    <td><?php echo $data['title'] ?></td>
+                    <td><?php echo $data['date'] ?></td>
+                    <td><?php echo $data['content'] ?></td>
+                    <td><img src="./upload-images/<?php echo $data['image']?>" style="border: 1px solid white;" width="30%.;" height="90px"  alt=imge  ></td>                                                     
                     <td>
-                    <a href="./edit.php?id=<?=$data->id;?>" class="btn btn-primary">Edit</a>
-                    <a href="./delete.php?id=<?= $data->id; ?>" class="btn btn-danger delete-user" >Delete</a></td>                                                     
+                    <a href="./edit.php?id=<?=$data['id']?>" class="btn btn-primary">Edit</a>
+                    <a href="./delete.php?id=<?= $data['id'] ?>" class="btn btn-danger delete-user" >Delete</a></td>                                                     
                 </tr>  
               <?php } ?>
                                                 
