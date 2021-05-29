@@ -80,7 +80,7 @@ if(isset($_GET['id'])){
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">image :</label>
     <input type="file" class="form-control" name="image" id="exampleInputPassword1" value="<?php echo $image ?>">
-    <img src="<?php echo $picImage ?>" alt="">
+    <img src="./upload-images/<?php echo $image ?>" class="mt-3 border border-1 rounded-1 w-50"   alt="image">
   </div>
 
   <button type="submit" name="submit" class="btn btn-primary">Submit</button>
