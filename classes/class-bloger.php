@@ -54,7 +54,7 @@ class bloger extends data {
         $sql->bindParam(":image",$image);
 
         if($sql->execute()){
-            return $sql->fetchAll(PDO::FETCH_ASSOC);
+            return true;
         }else{
             return false;
         }
