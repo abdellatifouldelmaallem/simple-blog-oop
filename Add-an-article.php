@@ -1,5 +1,6 @@
 
 <?php 
+include './inderdit.php';
 require './classes/class-bloger.php';
 include './templet/header.php';
 
@@ -25,7 +26,11 @@ if(isset($_POST['submit'])){
         $object = new bloger();
         if($object->addArticle($title, $date, $content, $picImage)){
           header("location:page-table.php");  
+        }else{
+          echo "sorry! unable to add record!";
         }
+    }else{
+      $error = "please fill all the details ";
     }
 
   

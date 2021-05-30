@@ -1,5 +1,6 @@
 
 <?php 
+include './inderdit.php';
 require './classes/class-bloger.php';
 include './templet/header.php';
 
@@ -25,7 +26,7 @@ if(isset($_GET['id'])){
       move_uploaded_file($tmp_dir,$upload_dir.$picImage);
   
       $object = new bloger();
-      if($object->updateArticle($id,$title, $date, $content,$picImage)){
+      if($object->updateArticle($id,$title, $date, $content,$image)){
           header("location:page-table.php");
       }else{
          echo "you have error"; 
@@ -74,7 +75,7 @@ if(isset($_GET['id'])){
 
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">content :</label>
-    <textarea type="text" class="form-control" name="content" id="exampleInputPassword1" value="<?php echo $content ?>"></textarea>
+    <textarea type="text" class="form-control" name="content" id="exampleInputPassword1" value=""><?php echo $content ?></textarea>
   </div>
 
   <div class="mb-3">

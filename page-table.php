@@ -1,4 +1,5 @@
 <?php 
+include './inderdit.php';
 include './classes/class-bloger.php';
 
 $art = new bloger();
