@@ -74,7 +74,7 @@ if(isset($_GET['id'])){
 
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">content :</label>
-    <input type="text" class="form-control" name="content" id="exampleInputPassword1" value="<?php echo $content ?>">
+    <textarea type="text" class="form-control" name="content" id="exampleInputPassword1" value="<?php echo $content ?>"></textarea>
   </div>
 
   <div class="mb-3">
