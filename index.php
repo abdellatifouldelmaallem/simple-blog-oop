@@ -13,7 +13,7 @@ $cards = $card -> getArticle();
 
 
 <!------------------------------section navbar------------------------->
-<nav class="navbar sticky-top bg-dark fixed-top navbar-expand-lg navbar-dark p-md-3">
+<nav class="navbar  bg-dark fixed-top navbar-expand-sm navbar-dark">
 
     <div class="container">
         <a href="#" class="navbar-brand fs-4">Navbar</a>
@@ -57,14 +57,19 @@ $cards = $card -> getArticle();
         <div class="row align-self-start">
         <?php foreach($cards as $data){   ?>
             <div class="col-md-4">
-                <div class="card">
-                    <img src="./upload-images/<?php echo $data['image'] ?>" class="card-img-top  " alt="image of the article" />
-                    <div class="card-body">
+                <div class="card h-75">
+                    <div class="h-50">
+                    <img src="./upload-images/<?php echo $data['image'] ?>" class="card-img-top h-100 " alt="image of the article" />
+                    </div>
+
+                   <div class="h-25">
+                   <div class="card-body ">
                         <h5 class="card-title"><?php echo $data['title'] ?></h5>
                         <p class="card-text"><?php echo $data['content'] ?></p>
-                        <a href="#!" class="btn btn-primary">Read More</a>
+                        <a href="#!" class="btn btn-primary ">Read More</a>
                         <small class="float-end fs-5"><?php echo $data['date'] ?></small>
                     </div>
+                   </div>
                 </div>
             </div>
             <?php } ?>
