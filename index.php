@@ -55,20 +55,20 @@ $cards = $card -> getArticle();
 <div class="container mt-4">
     <div class="row">
         <div class="row align-self-start">
-
+        <?php foreach($cards as $data){   ?>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="./images/design.jpg" class="card-img-top" alt="..." />
+                    <img src="./upload-images/<?php echo $data['image'] ?>" class="card-img-top" alt="image of the article" />
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
+                        <h5 class="card-title"><?php echo $data['title'] ?></h5>
+                        <p class="card-text"><?php echo $data['content'] ?></p>
                         <a href="#!" class="btn btn-primary">Read More</a>
+                        <small class="float-end fs-5"><?php echo $data['date'] ?></small>
                     </div>
                 </div>
             </div>
+            <?php } ?>
+            
 <!-- 
             <div class="col-md-4">
                 <div class="card">
