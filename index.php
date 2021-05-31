@@ -65,7 +65,15 @@ $cards = $card -> getArticle();
                    <div class="h-25">
                    <div class="card-body ">
                         <h5 class="card-title"><?php echo $data['title'] ?></h5>
-                        <p class="card-text"><?php echo $data['content'] ?></p>
+                        <p class="card-text"><?php 
+                        if(strlen($data['content'])<= 200){
+
+                             echo $data['content'];
+                        }else{
+                            $y=substr($data['content'],0,200) . '...';
+                            echo $y;
+                        }
+                         ?></p>
                         <a href="#!" class="btn btn-primary ">Read More</a>
                         <small class="float-end fs-5"><?php echo $data['date'] ?></small>
                     </div>
