@@ -26,23 +26,18 @@ if(isset($_GET['id'])){
         $imgExt = strtolower(pathinfo($image,PATHINFO_EXTENSION));
         $valid_extansion = array('jpeg','jpg','png');
         $picImage = rand(1000,1000000).".".$imgExt;
-        // if(empty($picImage)){
-        //   $image = $oldimage;
-        // }
-          move_uploaded_file($tmp_dir,$upload_dir.$picImage);
+      
+        move_uploaded_file($tmp_dir,$upload_dir.$picImage);
       }else{
           $picImage = $oldimage;
       }
 
       $object = new bloger();
-      if($object->updateArticle($id,$title, $date, $content,$picImage)){
+      $newEdit = $object->updateArticle($id,$title, $date, $content,$picImage);
+      if($newEdit){
           header("location:page-table.php");
-      }else{
-         echo "you have error"; 
       }
-      
-        
-      
+       
     }
     
       $title = $articleOld->title;
