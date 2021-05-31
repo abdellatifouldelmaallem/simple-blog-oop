@@ -14,32 +14,47 @@ if(isset($_GET['id'])){
       $title = $_POST['title'];
       $date = $_POST['date'];
       $content = $_POST['content'];
-  
-      $image = $_FILES['image']['name'];
-      $tmp_dir = $_FILES['image']['tmp_name'];
-      $imageSize = $_FILES['image']['size'];
+      $oldimage = $_POST['oldimage'];
       
-      $upload_dir = './upload-images/';
-      $imgExt = strtolower(pathinfo($image,PATHINFO_EXTENSION));
-      $valid_extansion = array('jpeg','jpg','png');
-      $picImage = rand(1000,1000000).".".$imgExt;
-      move_uploaded_file($tmp_dir,$upload_dir.$picImage);
   
+      if ($_FILES['image']['name']) {
+        $image = $_FILES['image']['name'];
+        $tmp_dir = $_FILES['image']['tmp_name'];
+        $imageSize = $_FILES['image']['size'];
+        
+        $upload_dir = './upload-images/';
+        $imgExt = strtolower(pathinfo($image,PATHINFO_EXTENSION));
+        $valid_extansion = array('jpeg','jpg','png');
+        $picImage = rand(1000,1000000).".".$imgExt;
+        // if(empty($picImage)){
+        //   $image = $oldimage;
+        // }
+          move_uploaded_file($tmp_dir,$upload_dir.$picImage);
+      }else{
+          $picImage = $oldimage;
+      }
+
       $object = new bloger();
-      if($object->updateArticle($id,$title, $date, $content,$image)){
+      if($object->updateArticle($id,$title, $date, $content,$picImage)){
           header("location:page-table.php");
       }else{
          echo "you have error"; 
       }
+      
+        
+      
     }
     
       $title = $articleOld->title;
       $date = $articleOld->date;
       $content = $articleOld->content;
       $image = $articleOld->image;
+
     
   }
-}
+    
+  }
+
 
 
 
@@ -81,6 +96,8 @@ if(isset($_GET['id'])){
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">image :</label>
     <input type="file" class="form-control" name="image" id="exampleInputPassword1" value="<?php echo $image ?>">
+    <input type="hidden" class="form-control" name="oldimage" id="exampleInputPassword1" value="<?php echo $image ?>">
+  
     <img src="./upload-images/<?php echo $image ?>" class="mt-3 border border-1 rounded-1 w-50"   alt="image">
   </div>
 
