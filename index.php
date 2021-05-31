@@ -74,7 +74,7 @@ $cards = $card -> getArticle();
                             echo $y;
                         }
                          ?></p>
-                        <a href="#!" class="btn btn-primary ">Read More</a>
+                        <a href="./Read-More.php?id=<?=$data['id']?>" class="btn btn-primary ">Read More</a>
                         <small class="float-end fs-5"><?php echo $data['date'] ?></small>
                     </div>
                    </div>
