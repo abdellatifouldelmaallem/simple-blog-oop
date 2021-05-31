@@ -43,19 +43,10 @@ if(isset($_GET['id'])){
       $title = $articleOld->title;
       $date = $articleOld->date;
       $content = $articleOld->content;
-      $image = $articleOld->image;
-
-    
+      $image = $articleOld->image;  
   }
     
   }
-
-
-
-
-
-
-
 ?>
 
 
